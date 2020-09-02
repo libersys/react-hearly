@@ -32,7 +32,10 @@
     "keywords": [
         "react-hearly",
         "react",
-        "component"
+        "component",
+        "hearly",
+        "hook",
+        "hooks"
     ],
     "author": "Dioris Moreno",
     "license": "MIT",
