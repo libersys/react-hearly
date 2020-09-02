@@ -1,2 +1,3 @@
 # react-hearly
-An easy to use React component to implement Hearly.
+
+An easy to use React hook and component to implement Hearly.
