@@ -4,6 +4,9 @@
     "description": "An easy to use React hook and component to implement Hearly.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
     "scripts": {
         "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\" \"tests/**/*.json\"",
         "lint": "eslint src --ext .ts --ext .tsx",
