@@ -20,7 +20,7 @@
         "test:once": "jest",
         "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
         "prepare": "npm run build",
-        "prepublishOnly": "npm test:once && npm run lint",
+        "prepublishOnly": "npm run test:once && npm run lint",
         "preversion": "npm run lint",
         "version": "npm run format && git add .",
         "postversion": "git push && git push --tags"
@@ -83,6 +83,7 @@
         "react-dom": "^16.8.2",
         "rimraf": "^3.0.2",
         "source-map-loader": "^1.1.0",
+        "ts-jest": "^26.3.0",
         "typescript": "^4.0.2",
         "uglifyjs-webpack-plugin": "^2.1.1",
         "webpack": "^4.29.4",
