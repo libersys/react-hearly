@@ -1,6 +1,6 @@
 {
     "name": "react-hearly",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "An easy to use React hook and component to implement Hearly.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
