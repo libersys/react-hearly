@@ -44,25 +44,14 @@ export const useHearly = (clientId: string): Hearly => {
             if (!hasHearly()) return;
 
             window.hearly.on('connected', () => {
-                // console.log('connected');
                 setState({ ...state, isReady: true });
             });
-            // window.hearly.on('disconnected', () => {
-            //     console.log('disconnected');
-            //     // setState({ ...state, isReady: false });
-            // });
             window.hearly.on('sessionStarted', () => {
-                // console.log('sessionStarted');
                 setState({ isReady: true, isTalking: true });
             });
             window.hearly.on('sessionEnded', () => {
-                // console.log('sessionEnded');
                 setState({ isReady: true, isTalking: false });
             });
-            // window.hearly.on('sessionConfirmed', () => {
-            //     // console.log('sessionConfirmed');
-            //     // setState({ isReady: true, isTalking: true });
-            // });
         };
 
         script.onerror = () => {
@@ -86,15 +75,16 @@ export const useHearly = (clientId: string): Hearly => {
     }, [clientId]);
 
     const start = (): void => {
-        if (!isReady) return;
-
-        if (!window.hearly.isEstablished()) window.hearly.call('dialogflow');
+        if (!hasHearly()) return;
+        if (!window.hearly.isReady()) return;
+        if (!window.hearly.isTalking()) window.hearly.start();
     };
 
     const end = (): void => {
-        if (!isReady) return;
-
-        if (window.hearly.isEstablished()) window.hearly.hangup();
+        if (!hasHearly()) return;
+        // Could loss connection while session is established.
+        // if (!window.hearly.isReady()) return;
+        if (window.hearly.isTalking()) window.hearly.end();
     };
 
     return {
